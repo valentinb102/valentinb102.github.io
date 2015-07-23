@@ -15,6 +15,12 @@
     padding: 5px 15px;
 }
 
+.navbar-toggle {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
 .navbar-brand {
     height: auto;
 }
