@@ -48,7 +48,7 @@ function updateServiceInfo(serviceStatus) {
             newPanel.find(".panel-collapse").attr("id", "collapse" + index);
         } else {
             // disable collapse
-            newPanel.find(".panelLink").removeAttr("data-toggle");
+            newPanel.find(".panelLink").removeAttr("href").removeAttr("data-toggle");
         }
 
         // show the accordion
