@@ -44,11 +44,11 @@ function updateServiceInfo(serviceStatus) {
             newPanel.find(".lineText").append($(lineText));
 
             // add collapse support
-            newPanel.find(".panel-heading").attr("href", "#collapse" + index);
+            newPanel.find(".panelLink").attr("href", "#collapse" + index);
             newPanel.find(".panel-collapse").attr("id", "collapse" + index);
         } else {
             // disable collapse
-            newPanel.find(".panel-heading").removeAttr("data-toggle");
+            newPanel.find(".panelLink").removeAttr("data-toggle");
         }
 
         // show the accordion
