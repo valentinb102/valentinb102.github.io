@@ -10,8 +10,13 @@
 #accordion .panelLink {
     display: block;
     color: black;
+    font-size: 22px;
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 5px 15px;
+}
+
+.navbar-brand {
+    height: auto;
 }
 
 .lineStatusGood {
@@ -19,5 +24,5 @@
 }
 
 .lineStatusBad {
-    color: #cc4f1a;
+    color: #c72d08;
 }

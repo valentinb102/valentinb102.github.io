@@ -1,5 +1,47 @@
 ﻿
 var panelTemplate;
+var trainLineColors = {
+    "ACE": {
+        "color": "#fff",
+        "background-color": "#2850AD"
+    },
+    "BDFM": {
+        "color": "#fff",
+        "background-color": "#FF6319"
+    },
+    "G": {
+        "color": "#fff",
+        "background-color": "#6CBE45"
+    },
+    "JZ": {
+        "color": "#fff",
+        "background-color": "#996633"
+    },
+    "L": {
+        "color": "#fff",
+        "background-color": "#A7A9AC"
+    },
+    "NQR": {
+        "color": "#000",
+        "background-color": "#FCCC0A"
+    },
+    "S": {
+        "color": "#fff",
+        "background-color": "#808183"
+    },
+    "123": {
+        "color": "#fff",
+        "background-color": "#EE352E"
+    },
+    "456": {
+        "color": "#fff",
+        "background-color": "#00933C"
+    },
+    "7": {
+        "color": "#fff",
+        "background-color": "#B933AD"
+    }
+};
 
 ; (function ($, document, window, undefined) {
     $(function () {
@@ -25,12 +67,19 @@ function updateServiceInfo(serviceStatus) {
     // create an accordion for each line
     $(serviceStatus).find('line').each(function (index, item) {
         var newPanel = panelTemplate.clone();
+        var lineName = $(this).find('name').text();
         var lineStatus = $(this).find('status').text();
         var lineText = $(this).find('text').text();
 
         // add line info
-        newPanel.find(".lineTitle").text($(this).find('name').text());
+        newPanel.find(".lineName").text(lineName);
         newPanel.find(".lineStatus").text(lineStatus);
+
+        // add line color
+        if (trainLineColors[lineName]) {
+            newPanel.find(".lineName").css(trainLineColors[lineName]);
+            console.log(trainLineColors[lineName])
+        }
 
         // add status class
         if (lineStatus === "GOOD SERVICE") {
