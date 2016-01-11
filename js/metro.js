@@ -49,7 +49,7 @@ var trainLineColors = {
         panelTemplate = $(".panelTemplate").clone();
 
         // download and store metro data
-        var yql = 'http://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent('select * from xml where url="' + "http://web.mta.info/status/serviceStatus.txt" + '"') + '&format=xml&callback=?';
+        var yql = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent('select * from xml where url="' + "http://web.mta.info/status/serviceStatus.txt" + '"') + '&format=xml&callback=?';
 
         $.getJSON(yql, function (data) {
             var serviceStatus = $.parseXML(data.results[0]);
@@ -78,7 +78,6 @@ function updateServiceInfo(serviceStatus) {
         // add line color
         if (trainLineColors[lineName]) {
             newPanel.find(".lineName").css(trainLineColors[lineName]);
-            console.log(trainLineColors[lineName])
         }
 
         // add status class
@@ -97,7 +96,7 @@ function updateServiceInfo(serviceStatus) {
             newPanel.find(".panel-collapse").attr("id", "collapse" + index);
         } else {
             // disable collapse
-            newPanel.find(".panelLink").removeAttr("href").removeAttr("data-toggle");
+            newPanel.find(".panelLink").addClass("lineStatusGood").removeAttr("href").removeAttr("data-toggle");
         }
 
         // show the accordion
