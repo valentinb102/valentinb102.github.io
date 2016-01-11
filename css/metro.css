@@ -3,13 +3,15 @@ body {
     padding: 0;
     margin: 0;
     border: 0;
-    -webkit-user-select: none;
-    -webkit-text-size-adjust: none;
 }
 
-.collapsing {
-    -webkit-transition: none;
-    transition: none;
+/* disable transitions */
+.panel-collapse.collapsing, .navbar-collapse.collapsing {
+    -webkit-transition: height 0.01s;
+    -moz-transition: height 0.01s;
+    -ms-transition: height 0.01s;
+    -o-transition: height 0.01s;
+    transition: height 0.01s;
 }
 
 #accordion .panelTemplate {
@@ -24,10 +26,9 @@ body {
     display: block;
     color: black;
     font-size: 22px;
+    font-weight: bold;
     text-decoration: none;
     padding: 5px 0 5px 10px;
-    font-weight: bold;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 #accordion .panel-collapse {
