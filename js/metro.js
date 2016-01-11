@@ -67,9 +67,9 @@ function updateServiceInfo(serviceStatus) {
     // create an accordion for each line
     $(serviceStatus).find('line').each(function (index, item) {
         var newPanel = panelTemplate.clone();
-        var lineName = $(this).find('name').text();
-        var lineStatus = $(this).find('status').text();
-        var lineText = $(this).find('text').text();
+        var lineName = $.trim($(this).find('name').text());
+        var lineStatus = $.trim($(this).find('status').text());
+        var lineText = $.trim($(this).find('text').text());
 
         // add line info
         newPanel.find(".lineName").text(lineName);
@@ -104,4 +104,9 @@ function updateServiceInfo(serviceStatus) {
 
         $("#accordion").append(newPanel);
     });
+}
+
+// mta specific stuff
+function ShowHide(id) {
+    $("#" + id).toggle();
 }

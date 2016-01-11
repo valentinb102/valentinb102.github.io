@@ -26,16 +26,12 @@ body {
     font-size: 22px;
     text-decoration: none;
     padding: 5px 0 5px 10px;
-    -webkit-box-sizing: border-box;
-    border-bottom: 1px solid #888;
-    border-top: 1px solid #eee;
     font-weight: bold;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 #accordion .panel-collapse {
-    -webkit-box-sizing: border-box;
-    background: #e3e3e3;
+    background: #f9f9f9;
 }
 
 .navbar-toggle {
@@ -58,4 +54,15 @@ body {
 
 .lineStatus.lineStatusBad {
     color: #c72d08;
+}
+
+@media (max-width: 768px) {
+    .navbar-brand {
+        padding: 15px 70px 15px 15px;
+    }
+}
+
+/* mta specific stuff */
+.plannedWorkDetail {
+    display: none;
 }
