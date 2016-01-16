@@ -62,7 +62,7 @@ var trainLineColors = {
 // update service info
 function updateServiceInfo(serviceStatus) {
     // set last updated date
-    $(".serviceLastUpdated").text(moment($(serviceStatus).find('timestamp').text(), "M/D/YYYY H:mm:ss A").fromNow());
+    $(".serviceLastUpdated").text("Last Update " + moment($(serviceStatus).find('timestamp').text(), "M/D/YYYY H:mm:ss A").fromNow());
 
     // create an accordion for each line
     $(serviceStatus).find('line').each(function (index, item) {
