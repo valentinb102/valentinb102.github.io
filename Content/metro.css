@@ -1,0 +1,69 @@
+﻿
+body {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+/* disable transitions */
+.panel-collapse.collapsing, .navbar-collapse.collapsing {
+    -webkit-transition: height 0.01s;
+    -moz-transition: height 0.01s;
+    -ms-transition: height 0.01s;
+    -o-transition: height 0.01s;
+    transition: height 0.01s;
+}
+
+#accordion .panelTemplate {
+    margin: 0;
+}
+
+#accordion .panel-heading {
+    padding: 0;
+}
+
+#accordion .panelLink {
+    display: block;
+    color: black;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px 0 5px 10px;
+}
+
+#accordion .panel-collapse {
+    background: #f9f9f9;
+}
+
+.navbar-toggle {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.navbar-brand {
+    height: auto;
+}
+
+.panelLink.lineStatusGood {
+    background: #f4f4f4;
+}
+
+.lineStatus.lineStatusGood {
+    color: #3ea12e;
+}
+
+.lineStatus.lineStatusBad {
+    color: #c72d08;
+}
+
+@media (max-width: 768px) {
+    .navbar-brand {
+        padding: 15px 70px 15px 15px;
+    }
+}
+
+/* mta specific stuff */
+.plannedWorkDetail {
+    display: none;
+}
