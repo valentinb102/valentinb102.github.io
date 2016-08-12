@@ -14,29 +14,13 @@ body {
     transition: height 0.01s;
 }
 
-.panelTemplate {
-    margin: 0;
+.navbar {
+    margin-bottom: 5px;
 }
 
-    .panelTemplate .panel-heading {
-        padding: 0;
-    }
-
-    .panelTemplate .panelLink {
-        display: block;
-        color: black;
-        font-size: 22px;
-        font-weight: bold;
-        text-decoration: none;
-        padding: 5px 0 5px 10px;
-    }
-
-    .panelTemplate .panel-collapse {
-        background: #f9f9f9;
-    }
-
-.navbar {
-    margin-bottom: 10px;
+.container {
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .navbar-toggle {
@@ -49,8 +33,41 @@ body {
     height: auto;
 }
 
+@media (max-width: 768px) {
+    .navbar-brand {
+        padding: 15px 70px 15px 15px;
+    }
+}
+
+.panel-group .panelTemplate {
+    margin: 0;
+    border-radius: 0;
+}
+
+    .panel-group .panelTemplate + .panelTemplate {
+        margin-top: 0;
+    }
+
+.panelTemplate .panel-heading {
+    padding: 0;
+    border-radius: 0;
+}
+
+.panelTemplate .panelLink {
+    display: block;
+    color: black;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px 0 5px 10px;
+}
+
+.panelTemplate .panel-collapse {
+    background: #f9f9f9;
+}
+
 .panelLink.lineStatusGood {
-    background: #f4f4f4;
+    background: #fff;
 }
 
 .lineStatus.lineStatusGood {
@@ -61,18 +78,34 @@ body {
     color: #c72d08;
 }
 
-@media (max-width: 768px) {
-    .navbar-brand {
-        padding: 15px 70px 15px 15px;
-    }
+#vtabLinksCol {
+    padding-left: 0;
+    max-width: 41px;
 }
 
-#vtabCol {
-    padding-left: 0;
-    max-width: 40px;
+    #vtabLinksCol .sideways {
+        margin-top: 48px;
+    }
+
+    #vtabLinksCol a {
+        border-radius: 0;
+        padding: 10px 5px;
+    }
+
+    #vtabLinksCol .active a {
+        background: #ddd;
+    }
+
+#vtabContentCol {
+    padding: 0;
 }
 
 /* mta specific stuff */
-.plannedWorkDetail {
+.lineText .plannedWorkDetailLink {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.lineText .plannedWorkDetail {
     display: none;
 }

@@ -96,6 +96,10 @@
                     // add collapse support
                     newPanel.find(".panelLink").attr("href", "#collapse" + lineTag + index);
                     newPanel.find(".panel-collapse").attr("id", "collapse" + lineTag + index);
+
+                    // link to group parent
+                    // this keeps only the last clicked panel open
+                    newPanel.find(".panelLink").attr("data-parent", "#tabPanel" + lineTag);
                 } else {
                     // disable collapse
                     newPanel.find(".panelLink").addClass("lineStatusGood").removeAttr("href").removeAttr("data-toggle");
