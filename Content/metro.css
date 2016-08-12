@@ -14,15 +14,15 @@ body {
     transition: height 0.01s;
 }
 
-#accordion .panelTemplate {
+.panelTemplate > .panel {
     margin: 0;
 }
 
-#accordion .panel-heading {
+.panelTemplate .panel-heading {
     padding: 0;
 }
 
-#accordion .panelLink {
+.panelTemplate .panelLink {
     display: block;
     color: black;
     font-size: 22px;
@@ -31,8 +31,12 @@ body {
     padding: 5px 0 5px 10px;
 }
 
-#accordion .panel-collapse {
+.panelTemplate .panel-collapse {
     background: #f9f9f9;
+}
+
+.navbar {
+    margin-bottom: 10px;
 }
 
 .navbar-toggle {
@@ -61,6 +65,11 @@ body {
     .navbar-brand {
         padding: 15px 70px 15px 15px;
     }
+}
+
+.vtabCol {
+    padding-left: 0;
+    max-width: 40px;
 }
 
 /* mta specific stuff */
