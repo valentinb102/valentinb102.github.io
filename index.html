@@ -47,27 +47,40 @@
         <div class="col-xs-10">
             <!-- Tab panes -->
             <div id="metroTabs" class="tab-content">
-                <div class="tab-pane active" id="tabSubway" data-line-tag="Subway"></div>
-                <div class="tab-pane" id="tabBus" data-line-tag="Bus"></div>
-                <div class="tab-pane" id="tabBT" data-line-tag="BT"></div>
-                <div class="tab-pane" id="tabLIRR" data-line-tag="LIRR"></div>
-                <div class="tab-pane" id="tabMetroNorth" data-line-tag="MetroNorth"></div>
+                <div class="tab-pane active" id="tabSubway" data-line-tag="subway">
+                    <div class="panel-group">
+                    </div>
+                </div>
+                <div class="tab-pane" id="tabBus" data-line-tag="bus">
+                    <div class="panel-group">
+                    </div>
+                </div>
+                <div class="tab-pane" id="tabBT" data-line-tag="BT">
+                    <div class="panel-group">
+                    </div>
+                </div>
+                <div class="tab-pane" id="tabLIRR" data-line-tag="LIRR">
+                    <div class="panel-group">
+                    </div>
+                </div>
+                <div class="tab-pane" id="tabMetroNorth" data-line-tag="MetroNorth">
+                    <div class="panel-group">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- *** Templates *** -->
     <div class="hidden">
-        <div class="panel-group panelTemplate">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <a class="panelLink" data-toggle="collapse" data-parent="#accordion">
-                        <span class="lineName"></span> - <span class="lineStatus"></span>
-                    </a>
-                </div>
-                <div class="panel-collapse collapse">
-                    <div class="panel-body lineText">
-                    </div>
+        <div class="panel panel-default panelTemplate">
+            <div class="panel-heading">
+                <a class="panelLink" data-toggle="collapse">
+                    <span class="lineName"></span> - <span class="lineStatus"></span>
+                </a>
+            </div>
+            <div class="panel-collapse collapse">
+                <div class="panel-body lineText">
                 </div>
             </div>
         </div>

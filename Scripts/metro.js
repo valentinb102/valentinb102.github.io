@@ -62,44 +62,48 @@
         // set last updated date
         $(".serviceLastUpdated").text("Last Update " + moment($(serviceStatus).find('timestamp').text(), "M/D/YYYY H:mm:ss A").fromNow());
 
-        console.log($("#metroTabs"))
-        //// create an accordion for each line
-        //$(serviceStatus).find('line').each(function (index, item) {
-        //    var newPanel = panelTemplate.clone();
-        //    var lineName = $.trim($(this).find('name').text());
-        //    var lineStatus = $.trim($(this).find('status').text());
-        //    var lineText = $.trim($(this).find('text').text());
+        $("#metroTabs .tab-pane").each(function () {
+            // grab lines per tab
+            var lineTabGroup = $(this).find(".panel-group");
+            var lineTag = $(this).data("line-tag");
 
-        //    // add line info
-        //    newPanel.find(".lineName").text(lineName);
-        //    newPanel.find(".lineStatus").text(lineStatus);
+            $(serviceStatus).find(lineTag).find('line').each(function (index, item) {
+                var newPanel = panelTemplate.clone();
+                var lineName = $.trim($(this).find('name').text());
+                var lineStatus = $.trim($(this).find('status').text());
+                var lineText = $.trim($(this).find('text').text());
 
-        //    // add line color
-        //    if (trainLineColors[lineName]) {
-        //        newPanel.find(".lineName").css(trainLineColors[lineName]);
-        //    }
+                // add line info
+                newPanel.find(".lineName").text(lineName);
+                newPanel.find(".lineStatus").text(lineStatus);
 
-        //    // add status class
-        //    if (lineStatus === "GOOD SERVICE") {
-        //        newPanel.find(".lineStatus").addClass("lineStatusGood");
-        //    } else {
-        //        newPanel.find(".lineStatus").addClass("lineStatusBad");
-        //    }
+                // add subway line color
+                if (lineTag === "subway" && trainLineColors[lineName]) {
+                    newPanel.find(".lineName").css(trainLineColors[lineName]);
+                }
 
-        //    if (lineText.length) {
-        //        // add text as jquery element 
-        //        newPanel.find(".lineText").append($(lineText));
+                // add status class
+                if (lineStatus === "GOOD SERVICE") {
+                    newPanel.find(".lineStatus").addClass("lineStatusGood");
+                } else {
+                    newPanel.find(".lineStatus").addClass("lineStatusBad");
+                }
 
-        //        // add collapse support
-        //        newPanel.find(".panelLink").attr("href", "#collapse" + index);
-        //        newPanel.find(".panel-collapse").attr("id", "collapse" + index);
-        //    } else {
-        //        // disable collapse
-        //        newPanel.find(".panelLink").addClass("lineStatusGood").removeAttr("href").removeAttr("data-toggle");
-        //    }
+                if (lineText.length) {
+                    // add text as jquery element 
+                    newPanel.find(".lineText").append($(lineText));
 
-        //    $("#tabSubway").append(newPanel);
-        //});
+                    // add collapse support
+                    newPanel.find(".panelLink").attr("href", "#collapse" + lineTag + index);
+                    newPanel.find(".panel-collapse").attr("id", "collapse" + lineTag + index);
+                } else {
+                    // disable collapse
+                    newPanel.find(".panelLink").addClass("lineStatusGood").removeAttr("href").removeAttr("data-toggle");
+                }
+
+                lineTabGroup.append(newPanel);
+            });
+        });
     }
 })(jQuery, document, window);
 

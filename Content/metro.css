@@ -14,26 +14,26 @@ body {
     transition: height 0.01s;
 }
 
-.panelTemplate > .panel {
+.panelTemplate {
     margin: 0;
 }
 
-.panelTemplate .panel-heading {
-    padding: 0;
-}
+    .panelTemplate .panel-heading {
+        padding: 0;
+    }
 
-.panelTemplate .panelLink {
-    display: block;
-    color: black;
-    font-size: 22px;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 5px 0 5px 10px;
-}
+    .panelTemplate .panelLink {
+        display: block;
+        color: black;
+        font-size: 22px;
+        font-weight: bold;
+        text-decoration: none;
+        padding: 5px 0 5px 10px;
+    }
 
-.panelTemplate .panel-collapse {
-    background: #f9f9f9;
-}
+    .panelTemplate .panel-collapse {
+        background: #f9f9f9;
+    }
 
 .navbar {
     margin-bottom: 10px;
@@ -67,7 +67,7 @@ body {
     }
 }
 
-.vtabCol {
+#vtabCol {
     padding-left: 0;
     max-width: 40px;
 }
