@@ -50,10 +50,14 @@
         // download and store metro data
         var yql = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent('select * from xml where url="' + "http://web.mta.info/status/serviceStatus.txt" + '"') + '&format=xml&callback=?';
 
-        $.getJSON(yql, function (data) {
-            var serviceStatus = $.parseXML(data.results[0]);
+        $.ajax({
+            dataType: "json",
+            url: yql,
+            success: function (data) {
+                var serviceStatus = $.parseXML(data.results[0]);
 
-            updateServiceInfo(serviceStatus);
+                updateServiceInfo(serviceStatus);
+            }
         });
     });
 
