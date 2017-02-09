@@ -59,14 +59,6 @@
                 updateServiceInfo(serviceStatus);
             }
         });
-
-        $.ajax({
-            method:"GET",
-            url: "http://web.mta.info/status/serviceStatus.txt",
-            success: function (data) {
-                console.log(data);
-            }
-        });
     });
 
     // update service info
